@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Captcha</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jqueryCaptcha/jquery.buttonCaptcha.min.js"></script>
+<link rel="stylesheet" href="js/jqueryCaptcha/jquery.buttonCaptcha.styles.css" media="screen" />
+
+<script type="text/javascript">
+ $(function(){	
+	$('#proteger').buttonCaptcha({
+		codeWord:"bits",
+		codeZone : 'com',
+		hideButton : true,
+		hideCaptcha : false,
+		lockButton : true,
+		scrollToButton : false,
+		verifyInput : true,
+		verifyName : 'gbws_captcha_input',
+		verifyMustBe : false,
+		verifyMustName : 'gbws_captcha_must_input',
+		captchaHeader : 'Você é um robô?',
+		captchaTip : 'Arraste as letras da esquerda para a direita, para obter a palavra "%code_word%".',
+		captchaUnlocked : 'Unlocked!',
+	})
+ });	
+</script>
+
+</head>
+
+<body>
+
+	<button type="button" id="proteger" >Botao protegido</button>
+
+</body>
+</html>

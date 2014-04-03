@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Button</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom.css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		
+		$('#dialog').dialog({
+			height:150,
+			modal:true,
+			autoOpen: false,
+			show: "blind",
+			hide: "explode"
+			})
+			
+		$('#modal').click(function(){
+				$( "#dialog" ).dialog( "open" );
+		})
+		
+		$('#mensagem').click(function(){
+				$( "#message" ).dialog({
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});	
+		});
+		$('#confirmar').click(function(){
+		$( "#confirm" ).dialog({
+			resizable: false,
+			height:140,
+			modal: true,
+			buttons: {
+				"Delete": function() {
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		});
+		
+		
+		
+	});
+	
+</script>
+</head>
+
+<body>
+	<p>Janela Modal:</p>
+    <a href="#" id="modal">Abrir Modal</a>
+    
+    <p>Confirmação:</p>
+    <a href="#" id="confirmar">Abrir Confirmação</a>
+    
+    <p>Modal Mensagem:</p>
+    <a href="#" id="mensagem">Abrir mensagem</a>
+
+
+
+<div id="dialog" title="Modal" style="display:none">
+	janela modal
+</div>
+<div id="message" title="Mensagem" style="display:none">
+	Download concluido
+</div>
+<div id="confirm" title="Confirmação" style="display:none">
+	<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Certeza?
+</div>
+
+</body>
+</html>

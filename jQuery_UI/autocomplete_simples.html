@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Auto Complete</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom.css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		
+		var dados = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+		
+		$('#tags').autocomplete({
+			source:dados
+		});
+	});
+	
+</script>
+</head>
+
+<body>
+	<p>Auto Complete:</p>
+    <div>
+    	<label for="tags">Tags:</label>
+        <input type="text" id="tags"/>
+	</div>
+</body>
+</html>

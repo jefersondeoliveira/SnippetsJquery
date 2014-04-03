@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Auto Complete</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom.css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$('#city').autocomplete({
+			source:function(request, response){
+				
+				$.ajax({
+					url:"http://ws.geonames.org/searchJSON",	
+					dataType:"jsonp",
+					data:
+					{
+						featureClass:"P",
+						style:"full",
+						maxRows:12,
+						name_startsWith: request.term	
+					},
+					success:function(data){
+						response($.map(data.geonames, function(item){
+						 return {
+							 		label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", "+item.countryName,
+									value: item.name
+							 	}	
+						}));
+					}
+				})
+				
+			}
+		});
+	});
+	
+</script>
+
+<style type="text/css">
+	.ui-autocomplete-loading{background:#FFF url(img/ajax-loader.gif) right center no-repeat;}
+</style>
+
+</head>
+
+<body>
+	<p>Auto Complete:</p>
+    <div>
+    	<label for="Cidades">Cidades:</label>
+        <input type="text" id="city"/>
+	</div>
+</body>
+</html>

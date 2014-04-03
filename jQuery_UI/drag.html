@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Button</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom.css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$('#drag').draggable({
+			revert: 'invalid'
+
+		});
+		$('#drop').droppable({
+			activeClass: "ui-state-hover",
+			hoverClass: "ui-state-active",
+			drop: function( event, ui ) {
+				$( this )
+					.addClass( "ui-state-highlight" )
+					.find( "p" )
+						.html( "Dropped!" );
+			}
+		});
+	});
+	
+</script>
+</head>
+
+<body>
+	<p>Drag and Drop :</p>
+ 
+ 	<div id="drag" style="padding:30px;background:#CCC;border:1px solid #000;width:100px;height:100px;">
+    	<p>Arraste-me</p>
+    </div>
+    
+    <div id="drop" style="padding:30px;background:#CCC;border:1px solid #000;width:200px;height:200px;">
+    	<p>Arraste ate aqui</p>
+    </div>
+ 
+</body>
+</html>

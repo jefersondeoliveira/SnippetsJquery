@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Button</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom.css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		
+		$('a').button({
+			icons:{primary:"ui-icon-tags"},
+			text:true
+		});
+		
+		$('#check').buttonset();
+		$('#radio').buttonset();
+		
+	});
+	
+</script>
+</head>
+
+<body>
+	<p>Button - Link:</p>
+		<a href="">Link</a>
+    
+	<p>Button - Checks:</p>
+	<div id="check">
+		<input type="checkbox" id="check1" /><label for="check1">a</label>
+		<input type="checkbox" id="check2" /><label for="check2">b</label>
+		<input type="checkbox" id="check3" /><label for="check3">c</label>
+	</div>
+	
+	<p>Button - Radio:</p>
+	<div id="radio">
+		<input type="radio" id="radio1" name="radio" /><label for="radio1">Homem</label>
+		<input type="radio" id="radio2" name="radio" /><label for="radio2">Mulher</label>
+	</div>
+	
+
+</body>
+</html>

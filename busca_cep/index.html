@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Busca Cep</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/jZipCode.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+		
+		$('#zipCode').jZipCode({
+         streetTarget: '#street',
+            districtTarget: '#district',
+            cityTarget: '#city',
+            stateTarget: '#state',
+            multipleReturns: '#returns',
+            keyUpDelay: 1500,
+            showMap: 'map' 
+     });
+	
+})	
+</script>
+
+</head>
+
+<body>
+   <!-- ZIP CODE FIELD -->
+    <input type="text" value="" id="zipCode" /> 
+    <!-- /ZIP CODE FIELD -->
+
+    <!-- LOCATION FORM FIELDS -->
+    <form>
+        <fieldset>
+            <span>Rua:</span> <input type="text" id="street" /><br /> 
+            <span>Cidade:</span> <input type="text" id="district" /><br />
+            <span>Estado:</span> <input type="text" id="city" /><br />
+            <span>Pais:</span> <input type="text" id="state" /><br />
+        </fieldset>
+    </form> 
+    <!-- LOCATION FORM FIELDS -->
+
+    <!-- IF GOOGLE MAPS RETURNS MORE THAN 1 RESULT WE'LL PLACE IT HERE -->
+    <div id="returns"></div>
+    <!-- /IF GOOGLE MAPS RETURNS MORE THAN 1 RESULT WE'LL PLACE IT HERE -->
+
+    <!-- IF YOU CHOSE SHOW THE MAP -->
+    <div id="map" style="width: 300px; height: 300px;"></div>
+    <!-- /IF YOU CHOSE SHOW THE MAP -->
+
+</body>
+</html>

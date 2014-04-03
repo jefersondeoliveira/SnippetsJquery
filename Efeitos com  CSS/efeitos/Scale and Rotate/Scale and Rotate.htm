@@ -1,0 +1,130 @@
+
+<html>
+
+<head>
+
+	<link href="test6.css" rel="stylesheet" type="text/css"/>
+
+	<script src="jquery.min.js" type="text/javascript"></script>
+
+</head>
+
+<body onclick="Spin();">
+
+
+
+	<div id="leftColumn">
+
+
+
+		<div id="box" class="message rotates">
+
+			<h2>Rotate</h2>
+
+			<div>Default Origin</div>
+
+		</div>
+
+		
+
+		<div id="boxtwo" class="message rotates">
+
+			<h2>Rotate</h2>
+
+			<div>Right Bottom</div>
+
+		</div>
+
+
+
+		<div id="boxthree" class="message rotates">
+
+			<h2>Rotate</h2>
+
+			<div>Point (0, 40)</div>
+
+		</div>
+
+
+
+	</div>
+
+	<div id="rightColumn">
+
+
+
+		<div id="boxfour" class="message scales">
+
+			<h2>Scale</h2>
+
+			<div>Default Origin</div>
+
+		</div>
+
+		
+
+		<div id="boxfive" class="message scales">
+
+			<h2>Scale</h2>
+
+			<div>Right Bottom</div>
+
+		</div>
+
+
+
+		<div id="boxsix" class="message scales">
+
+			<h2>Scale</h2>
+
+			<div>Point (0, 40)</div>
+
+		</div>
+
+		
+
+	</div>
+
+	
+
+	<script type="text/javascript">
+
+		var currentRotate = 0;
+
+		var currentScale = 1;
+
+		
+
+		function Spin() {
+
+			var messagesToRotate = $(".rotates");
+
+			currentRotate += 360;
+
+			
+
+			messagesToRotate.each( function(i) { this.style.webkitTransform = 'rotate(' + currentRotate + 'deg)'; });
+
+			
+
+			currentScale += .2;
+
+			if (currentScale >= 2)
+
+				currentScale = .8;
+
+				
+
+			var messagesToScale = $(".scales");
+
+			messagesToScale.each( function(i) { this.style.webkitTransform = 'scale(' + currentScale + ')'; });
+
+		};
+
+	</script>
+
+
+
+</body>
+
+</html>

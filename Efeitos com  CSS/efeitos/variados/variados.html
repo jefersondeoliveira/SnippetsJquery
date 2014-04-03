@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+/*tipos de navegadors
+-moz-
+-webkit-
+-ms-
+-o-
+*/
+.menu {
+    background-color: #FFFFFF;
+    border: 2px solid green;
+    float: left;
+    height: 80px;
+    line-height: 60px;
+    margin: 4em 1em;
+    text-align: center;
+    width: 100px;
+}
+.showbox {
+    background-color: #FFFFFF;
+    border: 2px solid green;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin: 4em 1em;
+    text-align: center;
+    width: 100px;
+}
+.showbox {
+    -moz-transition: all 1s ease-in-out 0s;
+	-webkit-transition: all 1s ease-in-out 0s;
+}
+.slideright:hover {
+    -moz-transform: translate(3em, 0pt);
+	-webkit-transform: translate(3em, 0pt);
+}
+.rotate:hover {
+    -moz-transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+}
+.slideleft:hover {
+    -moz-transform: translate(-3em, 1em);
+	-webkit-transform: translate(-3em, 1em);
+}
+.scale:hover {
+    -moz-transform: scale(2);
+	-webkit-transform: scale(2);
+}
+.showoff, .showoff2 {
+    margin: 2em 6em;
+}
+.showoff2, .showoff:hover {
+    -moz-transform: scale(2);
+	-webkit-transform: scale(2);
+    border-color: red;
+    border-radius: 1em 1em 1em 1em;
+}
+.showoff2:hover {
+    -moz-transform: scale(1);
+	-webkit-transform: scale(1);
+    border-color: green;
+    border-radius: 0 0 0 0;
+}
+.shadow:hover {
+  -webkit-transition-delay:initial;
+  -webkit-transition-duration:0.3s;
+  -webkit-transition-property:all;
+  -webkit-transition-timing-function:ease;
+  box-shadow: 0px 0px 5px #000
+}
+.effectMenu{
+	-moz-transition: all 0.5s ease-in-out 0s;
+	-webkit-transition: all 0.5s ease-in-out 0s;
+	background-image:url(http://www.naosalvo.com.br/wp-content/themes/naosalvo/images/effectMenu.jpg);
+	color:#B6F9FB;
+}
+.effectMenu:hover {
+  -webkit-transition-delay:initial;
+  -webkit-transition-duration:0.3s;
+  -webkit-transition-property:all;
+  -webkit-transition-timing-function:ease;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(http://www.naosalvo.com.br/wp-content/themes/naosalvo/images/effectMenu.jpg);
+  background-origin:initial;
+  background-position:0 bottom;
+  background-repeat:repeat no-repeat;
+  color:#B6F9FB;
+  padding-top:6px;
+}
+</style>
+</head>
+    
+    <div class="showbox slideright">box 1</div>
+    <div class="showbox rotate" style="border-color: red;">box 2</div>
+    <div class="showbox slideleft">box 3</div>
+    <div class="showbox scale">box 4</div>
+    
+    <div class="showbox showoff">box 5</div>
+	<div class="showbox showoff2">box 6</div>
+	
+	<div class="showbox shadow">box 7</div>
+	<div class="menu effectMenu">box 8</div>
+    
+<body>
+</body>
+</html>
